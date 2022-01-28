@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class = "container my-4">
+    {% for room in rooms %}
+    <div class = "card">
+        <span>@{{room.host.username}}</span><br>
+    <a>Roll number: {{room.id}}</a><br>
+        <a class = "btn btn-outline-success" href = 'room\{{room.id}}'>Name: {{room.name}}</a>
+        <br>
+        <small>{{room.topic.name}}</small>
+        <br>
+        <a class = "btn btn-outline-success" href = 'update\{{room.id}}'>Edit</a>
+        <a class = "btn btn-outline-success" href = 'delete\{{room.id}}'>Delete</a>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+<div class = "container my-4">
+    <a class = "btn btn-success" href = 'create\'>Add new item</a>
+</div>
+{% endblock content %}

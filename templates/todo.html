@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<p>todo page</p>
+{% for i in rooms %}
+<p>{{i.task}} and {{i.desc}}</p>
+{% endfor %}
+{% endblock %}

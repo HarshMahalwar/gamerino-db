@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class = "container my-4">
+    <div class="card container bg-light" style=" margin:2rem; width: 28rem; " method ='POST'>
+    <div class="card-body">
+        <form action="#" method = "post">
+          {% csrf_token %}
+          <label  class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" placeholder="Enter your username here">
+
+          <label  class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password">
+
+          <br>
+          <div class = 'col-md-12 text-center'>
+              <input type = 'submit' class="btn btn-outline-success" value ='sign up'/>
+            <br>
+
+            <p class = 'nav-link disabled text-center'>Haven't signed up yet?</p>
+          <a  class = "btn btn-outline-success" href="{% url 'register' %}" >Create a new account</a>
+          </div>
+        </form>
+</div>
+    </div>
+</div>
+{% endblock content %}
